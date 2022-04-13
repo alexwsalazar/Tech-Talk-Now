@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS BlogCumm_db;
+CREATE DATABASE BlogCumm_db;
