@@ -15,7 +15,9 @@ SO THAT I can publish articles, blog posts, and my thoughts and opinions
 
 ## Screenshots
 
-![Tech-Talk-Now]()
+![Tech-Talk-Now](./images/techblog1.jpg)
+![Tech-Talk-Now](./images/techblog2.jpg)
+![Tech-Talk-Now](./images/techbog3.jpg)
 
 ## Run Locally
 
