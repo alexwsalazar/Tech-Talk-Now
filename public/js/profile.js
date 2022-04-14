@@ -1,6 +1,5 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
-
   const name = document.querySelector('#blog-name').value.trim();
   const description = document.querySelector('#blog-desc').value.trim();
 
@@ -14,7 +13,7 @@ const newFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/profile'); 
     } else {
       alert('Failed to create blog');
     }
@@ -31,31 +30,12 @@ const delButtonHandler = async (event) => {
 
     if (response.ok) {
       document.location.replace('/profile');
-    } else {
+    } else {    
       alert('Failed to delete blog');
     }
   }
 };
 
-const commentFormHandler = async (event) => {
-  event.preventDefault();
-  
-  const blogId = document.querySelector('input[name="post-id"]').value;
-  const text = document.querySelector('textarea[name="comment-body"]').value;
-  if (text) {
-    await fetch('/api/comment', {
-      method: 'POST',
-      body: JSON.stringify({
-        blogId,
-        text
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-    document.location.reload();
-  }
-};
 
 document
   .querySelector('.new-blog-form')
@@ -65,6 +45,3 @@ document
   .querySelector('.blog-list')
   .addEventListener('click', delButtonHandler);
 
-document
-  .querySelector('#new-comment-form')
-  .addEventListener('submit', commentFormHandler);
