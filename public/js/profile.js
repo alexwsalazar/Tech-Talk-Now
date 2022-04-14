@@ -37,8 +37,9 @@ const delButtonHandler = async (event) => {
   }
 };
 
-const commentFormHandler = async function(event) {
+const commentFormHandler = async (event) => {
   event.preventDefault();
+  
   const blogId = document.querySelector('input[name="post-id"]').value;
   const text = document.querySelector('textarea[name="comment-body"]').value;
   if (text) {

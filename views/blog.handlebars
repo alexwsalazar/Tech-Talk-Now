@@ -3,25 +3,28 @@
   <p>{{description}}</p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
 
-    {{#if Comments}}
+    {{#if comments.length}}
   <section class="card">
     <div class="card-header">
       <h3>Comments</h3>
     </div>
     <div class="card-body">
-      {{#each Comments}}
-        <div>
-          <p>
-            {{text}}
-          </p>
-          <p>
-            &mdash; {{User.username}}, {{format_date createdAt}}
-          </p>
+      {{#each comments as |comment|}}
+        <div class="row mb-2">
+          <div class="col-md-8">
+            <p>
+             {{comment.text}}
+            </p>
+             <p>Created by {{blog.user.name}} on {{format_date blog.date_created}}</p>
+          </div>
+          <div class="col-md-4">
+            <button class="btn btn-sm btn-danger" data-id="{{cpmment.id}}">DELETE</button>
+          </div>
         </div>
       {{/each}}
     </div>
   </section>
-{{/if}}
+     {{/if}}
 
  <form id="new-comment-form" class="card">
     <div class="card-header">
